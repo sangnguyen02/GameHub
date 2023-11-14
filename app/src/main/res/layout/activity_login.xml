@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/background"
+            android:scaleType="centerCrop"
+            />
+
+        <TextView
+            android:id="@+id/titleSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:layout_centerHorizontal="true"
+            android:text="Game Hub"
+            android:textColor="@color/white"
+            android:fontFamily="@font/roboto_condensed_bold"
+            android:textSize="48sp"/>
+
+        <LinearLayout
+            android:id="@+id/mail_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/titleSignIn"
+            android:layout_marginTop="100dp"
+            android:padding="10dp">
+            <ImageView
+                android:id="@+id/img_mail"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/email_icon"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                />
+
+            <EditText
+                android:id="@+id/edt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@drawable/input_design"
+                android:hint="Email"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:maxLines="2"
+                android:scrollbars="vertical"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/password_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/mail_section"
+            android:layout_marginTop="20dp"
+            android:padding="10dp">
+            <ImageView
+                android:id="@+id/img_password"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/password_icon"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                />
+
+            <EditText
+                android:id="@+id/edt_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@drawable/input_design"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:maxLines="2"
+                android:scrollbars="vertical"
+                />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/signup_btn"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/password_section"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp"
+            android:text="Sign Up"
+            android:textSize="24sp"
+            android:fontFamily="@font/roboto_condensed_bold"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sign_btn"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/password_section"
+            android:layout_toEndOf="@id/signup_btn"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="10dp"
+            android:text="Sign In"
+            android:textSize="24sp"
+            android:fontFamily="@font/roboto_condensed_bold"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/signup_btn"
+            android:visibility="invisible"
+            style="?android:attr/progressBarStyle"
+            android:indeterminate="true"
+            android:progressTint="@color/black"/>
+
+    </RelativeLayout>
+
+</ScrollView>
