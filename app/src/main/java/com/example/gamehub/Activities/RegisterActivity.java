@@ -109,7 +109,7 @@ public class RegisterActivity extends AppCompatActivity {
                         else {
                             progressBar.setVisibility(View.INVISIBLE);
                             // If sign in fails, display a message to the user.
-                            Snackbar snackbar = Snackbar.make(showSnackBarView, "Authentication failed.", Snackbar.LENGTH_LONG);
+                            Snackbar snackbar = Snackbar.make(showSnackBarView, "Your email has been already existed.", Snackbar.LENGTH_LONG);
                             snackbar.show();
                         }
                     }
@@ -126,9 +126,9 @@ public class RegisterActivity extends AppCompatActivity {
                 if (!snapshot.child("Users").child(idUser).exists()) {
 
                     HashMap<String, Object> userdataMap = new HashMap<>();
-                    userdataMap.put("Email", email);
                     userdataMap.put("Fullname", "Not Update");
-                    userdataMap.put("UserID", idUser);
+                    userdataMap.put("Phone", "Not Update");
+                    userdataMap.put("Email", email);
 
                     RootRef.child("Users").child(idUser).updateChildren(userdataMap)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -148,11 +148,6 @@ public class RegisterActivity extends AppCompatActivity {
                                 }
 
                             });
-                }
-                else {
-                    progressBar.setVisibility(View.INVISIBLE);
-                    Snackbar snackbar = Snackbar.make(showSnackBarView, "Your email has been already existed.", Snackbar.LENGTH_LONG);
-                    snackbar.show();
                 }
             }
             @Override
