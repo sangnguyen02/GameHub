@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.User.ProfileFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/profileSection"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:background="@drawable/background"
+                android:gravity="center"
+                android:orientation="vertical">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_profile"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/usericon"
+                    app:civ_border_width="2dp"
+                    app:civ_border_color="@android:color/transparent"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_fullname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Fullname"
+                    android:textSize="26dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/roboto_condensed_bold"
+                    android:textColor="@color/black"
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/button_section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/profileSection">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/edit_card"
+                    android:layout_width="360dp"
+                    android:layout_height="90dp"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="16dp"
+                    android:backgroundTint="@color/profile_card_view"
+                    app:contentPadding="16dp"
+                    android:clickable="true"
+                    android:layout_weight="1">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/edit_icon"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/edit_icon"
+                            android:scaleType="centerCrop"
+                            />
+                        <TextView
+                            android:id="@+id/tv_editProfile"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_toEndOf="@id/edit_icon"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Edit Profile"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/roboto_condensed_bold"
+                            android:textColor="@color/white"
+                            />
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/leaderboard_card"
+                    android:layout_width="360dp"
+                    android:layout_height="90dp"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="16dp"
+                    android:backgroundTint="@color/view_leader_board"
+                    app:contentPadding="16dp"
+                    android:layout_weight="1">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/leaderboard_icon"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="15dp"
+                            android:src="@drawable/leaderboard_icon"
+                            android:scaleType="centerCrop"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_leaderboard"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_toEndOf="@id/leaderboard_icon"
+                            android:layout_gravity="center_horizontal"
+                            android:text="View Leaderboard"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/roboto_condensed_bold"
+                            android:textColor="@color/white"
+                            />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/setting_card"
+                    android:layout_width="360dp"
+                    android:layout_height="90dp"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="16dp"
+                    android:backgroundTint="@color/setting_card"
+                    app:contentPadding="16dp"
+                    android:clickable="true"
+                    android:layout_weight="1">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/setting_icon"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/setting_icon"
+                            android:scaleType="centerCrop"
+                            />
+                        <TextView
+                            android:id="@+id/tv_setting"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_toEndOf="@id/setting_icon"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Setting"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/roboto_condensed_bold"
+                            android:textColor="@color/white"
+                            />
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/logout_card"
+                    android:layout_width="360dp"
+                    android:layout_height="90dp"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="16dp"
+                    android:backgroundTint="@color/sign_out_card"
+                    app:contentPadding="16dp"
+                    android:layout_weight="1">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/logout_icon"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="15dp"
+                            android:src="@drawable/logout_icon"
+                            android:scaleType="centerCrop"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_logout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_toEndOf="@id/logout_icon"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Sign Out"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/roboto_condensed_bold"
+                            android:textColor="@color/white"
+                            />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+</FrameLayout>
