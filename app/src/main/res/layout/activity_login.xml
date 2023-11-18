@@ -94,12 +94,29 @@
                 />
         </LinearLayout>
 
+        <com.rey.material.widget.CheckBox
+            android:id="@+id/admin_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/password_section"
+            android:layout_marginStart="70dp"
+            app:cbd_strokeColor="@android:color/holo_green_dark"
+            android:backgroundTint="@color/background"
+            android:layout_gravity="center_vertical"
+            android:checked="true"
+            android:text="Are you Admin?"
+            android:textColor="@color/white"
+            android:fontFamily="@font/roboto_condensed_bold"
+            android:textSize="20sp"
+            />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/signup_btn"
             android:layout_width="160dp"
             android:layout_height="60dp"
-            android:layout_below="@id/password_section"
-            android:layout_marginTop="30dp"
+            android:layout_below="@id/admin_checkbox"
+            android:layout_marginTop="20dp"
             android:layout_marginStart="30dp"
             android:text="Sign Up"
             android:textSize="24sp"
@@ -111,9 +128,9 @@
             android:id="@+id/sign_btn"
             android:layout_width="160dp"
             android:layout_height="60dp"
-            android:layout_below="@id/password_section"
+            android:layout_below="@id/admin_checkbox"
             android:layout_toEndOf="@id/signup_btn"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginStart="10dp"
             android:text="Sign In"
             android:textSize="24sp"

@@ -1,7 +1,6 @@
 package com.example.gamehub.Fragments.User;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,12 +10,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.example.gamehub.Activities.LoginActivity;
-import com.example.gamehub.Activities.MainActivity;
 import com.example.gamehub.Activities.User.EditProfileActivity;
 import com.example.gamehub.R;
 import com.google.firebase.auth.FirebaseAuth;

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Manage Users"
+        android:icon="@drawable/manage_accounts_icon"
+        android:id="@+id/manage_users"/>
+
+    <item
+        android:title="Manage Leaderboard"
+        android:icon="@drawable/leaderboard_icon"
+        android:id="@+id/manage_leaderboard"/>
+
+</menu>

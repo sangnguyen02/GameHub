@@ -8,5 +8,7 @@
     <color name="setting_card">#a96d16</color>
     <color name="sign_out_card">#a91616</color>
     <color name="label">#969696</color>
+    <color name="active">#AAFF00</color>
+    <color name="inactive">#FFCC0000</color>
 
 </resources>

@@ -66,9 +66,6 @@ public class EditProfileActivity extends AppCompatActivity {
         if(user == null) {
             return;
         }
-        else {
-
-        }
 
         storageProfilePrictureRef = FirebaseStorage.getInstance().getReference().child("Profile pictures");
 
@@ -150,18 +147,33 @@ public class EditProfileActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()) {
-                    String image = snapshot.child("image").getValue().toString();
-                    String name = snapshot.child("Fullname").getValue().toString();
-                    String gender = snapshot.child("Gender").getValue().toString();
-                    String phone = snapshot.child("Phone").getValue().toString();
-                    String address = snapshot.child("Location").getValue().toString();
-
-                    Picasso.get().load(image).into(profileImageView);
-                    fullNameEditText.setText(name);
-                    int genderPosition = findGenderPosition(gender);
-                    genderSpinner.setSelection(genderPosition);
-                    userPhoneEditText.setText(phone);
-                    locationEditText.setText(address);
+                    if(snapshot.child("image").exists()) {
+                        String image = snapshot.child("image").getValue().toString();
+                        String name = snapshot.child("Fullname").getValue().toString();
+                        String gender = snapshot.child("Gender").getValue().toString();
+                        String phone = snapshot.child("Phone").getValue().toString();
+                        String address = snapshot.child("Location").getValue().toString();
+                        if(image != null) {
+                            Picasso.get().load(image).into(profileImageView);
+                        }
+                        fullNameEditText.setText(name);
+                        int genderPosition = findGenderPosition(gender);
+                        genderSpinner.setSelection(genderPosition);
+                        userPhoneEditText.setText(phone);
+                        locationEditText.setText(address);
+                    }
+                    else {
+                        profileImageView.setImageResource(R.drawable.usericon);
+                        String name = snapshot.child("Fullname").getValue().toString();
+                        String gender = snapshot.child("Gender").getValue().toString();
+                        String phone = snapshot.child("Phone").getValue().toString();
+                        String address = snapshot.child("Location").getValue().toString();
+                        fullNameEditText.setText(name);
+                        int genderPosition = findGenderPosition(gender);
+                        genderSpinner.setSelection(genderPosition);
+                        userPhoneEditText.setText(phone);
+                        locationEditText.setText(address);
+                    }
                 }
             }
 
@@ -204,10 +216,10 @@ public class EditProfileActivity extends AppCompatActivity {
         }
         else
         {
-            Toast.makeText(this, "Error, Try Again.", Toast.LENGTH_SHORT).show();
-
-            startActivity(new Intent(EditProfileActivity.this, EditProfileActivity.class));
-            finish();
+//            Toast.makeText(this, "Error, Try Again.", Toast.LENGTH_SHORT).show();
+//
+//            startActivity(new Intent(EditProfileActivity.this, EditProfileActivity.class));
+//            finish();
         }
     }
 
@@ -259,11 +271,11 @@ public class EditProfileActivity extends AppCompatActivity {
                                 DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Users");
 
                                 HashMap<String, Object> userMap = new HashMap<>();
-                                userMap. put("Fullname",userFullname.getText().toString());
-                                userMap. put("Gender", selectedGender);
-                                userMap. put("Phone", userPhone.getText().toString());
+                                userMap.put("Fullname",userFullname.getText().toString());
+                                userMap.put("Gender", selectedGender);
+                                userMap.put("Phone", userPhone.getText().toString());
                                 userMap.put("Location", userLocation.getText().toString());
-                                userMap. put("image", myUrl);
+                                userMap.put("image", myUrl);
                                 ref.child(userID).updateChildren(userMap);
 
                                 Toast.makeText(EditProfileActivity.this, "Profile Info update successfully.", Toast.LENGTH_SHORT).show();

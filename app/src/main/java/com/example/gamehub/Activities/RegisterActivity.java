@@ -10,8 +10,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
+import com.example.gamehub.Activities.User.MainActivityUser;
+import com.example.gamehub.Models.User;
 import com.example.gamehub.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -38,7 +39,6 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
 
         initUI();
         initListener();
@@ -131,6 +131,7 @@ public class RegisterActivity extends AppCompatActivity {
                     userdataMap.put("Phone", "Not Update");
                     userdataMap.put("Email", email);
                     userdataMap.put("Location", "Not Update");
+                    userdataMap.put("Status", "1");
 
                     RootRef.child("Users").child(idUser).updateChildren(userdataMap)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -140,7 +141,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         progressBar.setVisibility(View.INVISIBLE);
                                         Log.d("Firebase", "Data added to Realtime Database successfully");
                                         // Sign in success, update UI with the signed-in user's information
-                                        Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                                        Intent intent = new Intent(RegisterActivity.this, MainActivityUser.class);
                                         startActivity(intent);
                                         finishAffinity();
                                     }
