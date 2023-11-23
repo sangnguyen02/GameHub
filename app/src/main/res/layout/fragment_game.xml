@@ -3,12 +3,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragments.User.GameFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager_2"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            />
+        <me.relex.circleindicator.CircleIndicator3
+            android:id="@+id/circle_indicator_3"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:layout_below="@+id/view_pager_2"
+            android:layout_centerHorizontal="true"
+            android:visibility="visible"
+            app:ci_drawable="@drawable/bg_indicator_3"
+            />
+    </RelativeLayout>
 
 </FrameLayout>

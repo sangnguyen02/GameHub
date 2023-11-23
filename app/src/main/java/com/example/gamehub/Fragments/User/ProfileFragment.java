@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.example.gamehub.Activities.LoginActivity;
 import com.example.gamehub.Activities.User.EditProfileActivity;
+import com.example.gamehub.Activities.User.SettingActivityUser;
 import com.example.gamehub.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -66,6 +67,15 @@ public class ProfileFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        settingCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(rootView.getContext(), SettingActivityUser.class);
+                startActivity(intent);
+            }
+        });
+
         signOutCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

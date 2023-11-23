@@ -3,8 +3,6 @@ package com.example.gamehub.Models;
 import com.google.firebase.database.PropertyName;
 
 public class User {
-    private String userId;
-
     @PropertyName("Email")
     private String email;
     @PropertyName("Fullname")
@@ -17,31 +15,26 @@ public class User {
     private String phone;
     @PropertyName("Status")
     private String status;
-
+    @PropertyName("UserID")
+    private String userId;
     @PropertyName("image")
     private String image;
 
     public User() {
 
     }
-
-    public User(String email, String fullname, String gender, String location, String phone, String status, String image) {
+    public User(String email, String fullname, String gender, String location, String phone, String status,String userId, String image) {
         this.email = email;
         this.fullname = fullname;
         this.gender = gender;
         this.location = location;
         this.phone = phone;
         this.status = status;
+        this.userId = userId;
         this.image = image;
     }
 
-    public String getUserId() {
-        return userId;
-    }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
 
     public String getEmail() {
         return email;
@@ -89,6 +82,13 @@ public class User {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getImage() {

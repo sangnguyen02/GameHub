@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.User.SettingActivityUser">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/setting_title_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background">
+            <ImageView
+                android:id="@+id/back_icon_setting"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/back_icon" />
+
+            <TextView
+                android:id="@+id/tv_titleEditProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:text="Setting"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto_condensed_bold"
+                android:textColor="@color/white"
+                />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_setting_group"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_below="@+id/setting_title_section">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_open_change_password_bts"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/password_section"
+                android:layout_margin="20dp"
+                android:layout_centerHorizontal="true"
+                android:text="Change Password"
+                android:textSize="24sp"
+                android:fontFamily="@font/roboto_condensed_bold"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/button"/>
+            <ProgressBar
+                android:id="@+id/progressBar_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:visibility="invisible"
+                style="?android:attr/progressBarStyle"
+                android:indeterminate="true"
+                android:progressTint="@color/black"/>
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+    <include layout="@layout/layout_bottom_sheet_change_password"/>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

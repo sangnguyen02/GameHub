@@ -71,9 +71,8 @@ public class EditProfileActivity extends AppCompatActivity {
 
         userID = user.getUid();
         initUI();
-        userEmail.setText(user.getEmail());
         initListener();
-        showUserProfile(profileImageView, userFullname, spinnerGender, userPhone, userLocation);
+        showUserProfile(profileImageView, userFullname, spinnerGender, userEmail, userPhone, userLocation);
 
     }
 
@@ -83,7 +82,7 @@ public class EditProfileActivity extends AppCompatActivity {
         showSnackBarView = findViewById(android.R.id.content);
         profileImageView = findViewById(R.id.img_profile_edit);
         saveIcon = findViewById(R.id.save_icon);
-        backIcon = findViewById(R.id.back_icon);
+        backIcon = findViewById(R.id.back_icon_edit);
         userFullname = findViewById(R.id.edt_fullname);
         spinnerGender = findViewById(R.id.spn_category);
         userPhone = findViewById(R.id.edt_phone);
@@ -137,6 +136,7 @@ public class EditProfileActivity extends AppCompatActivity {
     private void showUserProfile(final CircleImageView profileImageView
             , final EditText fullNameEditText
             , final Spinner genderSpinner
+            , final EditText userEmailEditText
             , final EditText userPhoneEditText
             , final EditText locationEditText) {
 
@@ -151,6 +151,7 @@ public class EditProfileActivity extends AppCompatActivity {
                         String image = snapshot.child("image").getValue().toString();
                         String name = snapshot.child("Fullname").getValue().toString();
                         String gender = snapshot.child("Gender").getValue().toString();
+                        String email = snapshot.child("Email").getValue().toString();
                         String phone = snapshot.child("Phone").getValue().toString();
                         String address = snapshot.child("Location").getValue().toString();
                         if(image != null) {
@@ -159,6 +160,7 @@ public class EditProfileActivity extends AppCompatActivity {
                         fullNameEditText.setText(name);
                         int genderPosition = findGenderPosition(gender);
                         genderSpinner.setSelection(genderPosition);
+                        userEmailEditText.setText(email);
                         userPhoneEditText.setText(phone);
                         locationEditText.setText(address);
                     }
@@ -166,11 +168,13 @@ public class EditProfileActivity extends AppCompatActivity {
                         profileImageView.setImageResource(R.drawable.usericon);
                         String name = snapshot.child("Fullname").getValue().toString();
                         String gender = snapshot.child("Gender").getValue().toString();
+                        String email = snapshot.child("Email").getValue().toString();
                         String phone = snapshot.child("Phone").getValue().toString();
                         String address = snapshot.child("Location").getValue().toString();
                         fullNameEditText.setText(name);
                         int genderPosition = findGenderPosition(gender);
                         genderSpinner.setSelection(genderPosition);
+                        userEmailEditText.setText(email);
                         userPhoneEditText.setText(phone);
                         locationEditText.setText(address);
                     }

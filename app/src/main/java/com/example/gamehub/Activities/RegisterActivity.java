@@ -126,6 +126,7 @@ public class RegisterActivity extends AppCompatActivity {
                 if (!snapshot.child("Users").child(idUser).exists()) {
 
                     HashMap<String, Object> userdataMap = new HashMap<>();
+                    userdataMap.put("UserID", idUser);
                     userdataMap.put("Fullname", "Not Update");
                     userdataMap.put("Gender", "Male");
                     userdataMap.put("Phone", "Not Update");

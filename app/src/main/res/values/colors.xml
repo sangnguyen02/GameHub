@@ -10,5 +10,6 @@
     <color name="label">#969696</color>
     <color name="active">#AAFF00</color>
     <color name="inactive">#FFCC0000</color>
+    <color name="button">#80AAFF00</color>
 
 </resources>

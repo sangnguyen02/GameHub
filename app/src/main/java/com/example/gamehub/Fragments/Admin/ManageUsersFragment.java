@@ -1,5 +1,6 @@
 package com.example.gamehub.Fragments.Admin;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.gamehub.Activities.Admin.UserDetailActivity;
 import com.example.gamehub.Models.User;
 import com.example.gamehub.R;
 import com.example.gamehub.ViewHolder.ManageUsersViewHolder;
@@ -29,7 +31,6 @@ import com.squareup.picasso.Picasso;
 public class ManageUsersFragment extends Fragment {
     View rootView;
     DatabaseReference UsersRef;
-    CardView userCardView;
     RecyclerView rcv_manageUsers;
 
 
@@ -86,6 +87,14 @@ public class ManageUsersFragment extends Fragment {
                         holder.itemView.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
+                                Intent intent = new Intent(rootView.getContext(), UserDetailActivity.class);
+                                intent.putExtra("userId", model.getUserId());
+                                if (model.getUserId() == null) {
+                                    Log.d("ID",model.getUserId());
+                                }
+                                else {
+                                    startActivity(intent);
+                                }
 
                             }
                         });
