@@ -2,6 +2,7 @@ package com.example.gamehub.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,12 +12,14 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.gamehub.Activities.Admin.MainActivityAdmin;
 import com.example.gamehub.Activities.User.MainActivityUser;
 import com.example.gamehub.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -33,8 +36,11 @@ public class LoginActivity extends AppCompatActivity {
 
     private static final String PREF_NAME = "UserPrefs";
     private static final String IS_ADMIN = "isAdmin";
-    MaterialButton signUp, signIn;
-    EditText email_input, password_input;
+    MaterialButton signUp, signIn, confirm_rs_password;
+    EditText email_input, password_input, email_rs_password;
+    CardView layoutBottomSheet_rs_password;
+    BottomSheetBehavior bottomSheetBehavior_rs_password;
+    TextView forgot_password;
     CheckBox adminCheckBox;
     ProgressBar progressBar;
     View showSnackBarView;
@@ -54,10 +60,29 @@ public class LoginActivity extends AppCompatActivity {
         email_input = findViewById(R.id.edt_email);
         password_input = findViewById(R.id.edt_password);
         adminCheckBox = findViewById(R.id.admin_checkbox);
+        forgot_password = findViewById(R.id.forgot_password);
+        email_rs_password = findViewById(R.id.inputText_email_rs);
+        confirm_rs_password = findViewById(R.id.confirm_rs_password_btn);
         progressBar = findViewById(R.id.progressBar_login);
+        layoutBottomSheet_rs_password = findViewById(R.id.bottom_sheet_rs_password);
+        bottomSheetBehavior_rs_password = BottomSheetBehavior.from(layoutBottomSheet_rs_password);
         showSnackBarView = findViewById(android.R.id.content);
     }
     private void initListener() {
+
+        forgot_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bottomSheetBehavior_rs_password.setState(BottomSheetBehavior.STATE_EXPANDED);
+            }
+        });
+
+        confirm_rs_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickConfirmRsPassword();
+            }
+        });
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -218,6 +243,31 @@ public class LoginActivity extends AppCompatActivity {
             Snackbar snackbar = Snackbar.make(showSnackBarView, "Authentication failed.", Snackbar.LENGTH_LONG);
             snackbar.show();
         }
+    }
+
+    private void onClickConfirmRsPassword() {
+        progressBar.setVisibility(View.VISIBLE);
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        String emailAddress = email_rs_password.getText().toString().trim();
+
+        auth.sendPasswordResetEmail(emailAddress)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            progressBar.setVisibility(View.INVISIBLE);
+                            Snackbar snackbar = Snackbar.make(showSnackBarView, "Email sent.", Snackbar.LENGTH_LONG);
+                            snackbar.show();
+                            bottomSheetBehavior_rs_password.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                        }
+                        else {
+                            progressBar.setVisibility(View.INVISIBLE);
+                            Snackbar snackbar = Snackbar.make(showSnackBarView, "Email sent error.", Snackbar.LENGTH_LONG);
+                            snackbar.show();
+                            bottomSheetBehavior_rs_password.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                        }
+                    }
+                });
     }
 
 
