@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:title="Space Ship"
+            android:id="@+id/nav_space_ship"/>
+
+        <item
+            android:title="2048"
+            android:id="@+id/nav_2048"/>
+    </group>
+
+</menu>

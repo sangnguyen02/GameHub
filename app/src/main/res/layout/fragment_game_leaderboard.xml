@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.User.Leaderboard.SpaceShipFragment">
+    tools:context=".Fragments.User.Leaderboard.GameLeaderboardFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/tv_title_game"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="space ship" />
+        android:text="@string/hello_blank_fragment" />
 
 </FrameLayout>

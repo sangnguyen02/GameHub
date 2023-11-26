@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.example.gamehub.Activities.LoginActivity;
 import com.example.gamehub.Activities.User.EditProfileActivity;
-import com.example.gamehub.Activities.User.LeaderboardActivityUser;
+import com.example.gamehub.Activities.User.GameLeaderboardActivity;
 import com.example.gamehub.Activities.User.SettingActivityUser;
 import com.example.gamehub.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -72,7 +72,7 @@ public class ProfileFragment extends Fragment {
         viewLeaderboardCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(rootView.getContext(), LeaderboardActivityUser.class);
+                Intent intent = new Intent(rootView.getContext(), GameLeaderboardActivity.class);
                 startActivity(intent);
             }
         });
