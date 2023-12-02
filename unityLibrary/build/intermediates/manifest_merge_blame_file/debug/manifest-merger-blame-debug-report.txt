@@ -1,0 +1,118 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    xmlns:tools="http://schemas.android.com/tools"
+4    package="com.unity3d.player" >
+5
+6    <uses-sdk
+7        android:minSdkVersion="22"
+7-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml
+8        android:targetSdkVersion="34" />
+8-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml
+9
+10    <uses-feature android:glEsVersion="0x00030000" />
+10-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:3:3-52
+10-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:3:17-49
+11    <uses-feature
+11-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:4:3-91
+12        android:name="android.hardware.vulkan.version"
+12-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:4:17-63
+13        android:required="false" />
+13-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:4:64-88
+14    <uses-feature
+14-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:5:3-88
+15        android:name="android.hardware.touchscreen"
+15-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:5:17-60
+16        android:required="false" />
+16-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:5:61-85
+17    <uses-feature
+17-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:6:3-99
+18        android:name="android.hardware.touchscreen.multitouch"
+18-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:6:17-71
+19        android:required="false" />
+19-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:6:72-96
+20    <uses-feature
+20-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:7:3-108
+21        android:name="android.hardware.touchscreen.multitouch.distinct"
+21-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:7:17-80
+22        android:required="false" />
+22-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:7:81-105
+23
+24    <application android:extractNativeLibs="true" >
+24-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:8:3-23:17
+24-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:8:16-48
+25        <meta-data
+25-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:9:5-69
+26            android:name="unity.splash-mode"
+26-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:9:16-48
+27            android:value="0" />
+27-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:9:49-66
+28        <meta-data
+28-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:10:5-74
+29            android:name="unity.splash-enable"
+29-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:10:16-50
+30            android:value="True" />
+30-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:10:51-71
+31        <meta-data
+31-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:11:5-78
+32            android:name="unity.launch-fullscreen"
+32-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:11:16-54
+33            android:value="True" />
+33-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:11:55-75
+34        <meta-data
+34-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:12:5-84
+35            android:name="unity.allow-resizable-window"
+35-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:12:16-59
+36            android:value="False" />
+36-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:12:60-81
+37        <meta-data
+37-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:13:5-81
+38            android:name="notch.config"
+38-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:13:16-43
+39            android:value="portrait|landscape" />
+39-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:13:44-78
+40        <meta-data
+40-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:14:5-84
+41            android:name="unity.auto-report-fully-drawn"
+41-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:14:16-60
+42            android:value="true" />
+42-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:14:61-81
+43
+44        <activity
+44-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:15:5-22:16
+45            android:name="com.unity3d.player.UnityPlayerActivity"
+45-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:15:15-68
+46            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
+46-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:15:180-361
+47            android:exported="true"
+47-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:15:433-456
+48            android:hardwareAccelerated="false"
+48-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:15:397-432
+49            android:launchMode="singleTask"
+49-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:15:148-179
+50            android:resizeableActivity="false"
+50-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:15:362-396
+51            android:screenOrientation="fullUser"
+51-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:15:111-147
+52            android:theme="@style/UnityThemeSelector" >
+52-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:15:69-110
+53
+54            <!-- <intent-filter> -->
+55            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+56            <!-- <action android:name="android.intent.action.MAIN" /> -->
+57            <!-- </intent-filter> -->
+58            <meta-data
+58-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:20:7-82
+59                android:name="unityplayer.UnityActivity"
+59-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:20:18-58
+60                android:value="true" />
+60-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:20:59-79
+61            <meta-data
+61-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:21:7-70
+62                android:name="notch_support"
+62-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:21:18-46
+63                android:value="true" />
+63-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:21:47-67
+64        </activity>
+65    </application>
+66
+67</manifest>
