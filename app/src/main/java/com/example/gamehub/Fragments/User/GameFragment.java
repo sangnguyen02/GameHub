@@ -1,5 +1,6 @@
 package com.example.gamehub.Fragments.User;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,6 +14,8 @@ import android.view.ViewGroup;
 import com.example.gamehub.Adapters.BannerViewPager2Adapter;
 import com.example.gamehub.Models.ImageBanner;
 import com.example.gamehub.R;
+import com.google.android.material.button.MaterialButton;
+import com.unity3d.player.UnityPlayerActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +24,8 @@ import me.relex.circleindicator.CircleIndicator3;
 
 public class GameFragment extends Fragment {
     View rootView;
+
+    MaterialButton openGameHub_btn;
     private ViewPager2 mViewPager2;
     private CircleIndicator3 mCircleIndicator3;
     private List<ImageBanner> mListImageBanner;
@@ -41,10 +46,12 @@ public class GameFragment extends Fragment {
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_game, container, false);
         initUI();
+        initListener();
         return rootView;
     }
 
     private void initUI() {
+        openGameHub_btn = rootView.findViewById(R.id.open_game_hub_btn);
         mViewPager2 = rootView.findViewById(R.id.view_pager_2);
         mCircleIndicator3 = rootView.findViewById(R.id.circle_indicator_3);
 
@@ -60,6 +67,16 @@ public class GameFragment extends Fragment {
                 super.onPageSelected(position);
                 mHandler.removeCallbacks(mRunnable);
                 mHandler.postDelayed(mRunnable, 5000);
+            }
+        });
+    }
+
+    private void initListener() {
+        openGameHub_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(rootView.getContext(), UnityPlayerActivity.class);
+                startActivity(intent);
             }
         });
     }

@@ -25,6 +25,18 @@
             android:visibility="visible"
             app:ci_drawable="@drawable/bg_indicator_3"
             />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/open_game_hub_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/circle_indicator_3"
+            android:layout_centerHorizontal="true"
+            android:text="Let's Play"
+            android:textSize="26sp"
+            android:fontFamily="@font/roboto_condensed_bold"
+            android:layout_marginTop="20dp"
+            />
     </RelativeLayout>
 
 </FrameLayout>

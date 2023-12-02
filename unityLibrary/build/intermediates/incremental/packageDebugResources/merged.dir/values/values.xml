@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="staticSplashScreenBackgroundColor">#231F20</color>
+    <item name="unitySurfaceView" type="id"/>
+    <string name="FreeformWindowOrientation_landscape"/>
+    <string name="FreeformWindowOrientation_portrait"/>
+    <string name="FreeformWindowSize_maximize"/>
+    <string name="FreeformWindowSize_phone"/>
+    <string name="FreeformWindowSize_tablet"/>
+    <string name="firebase_database_url" translatable="false">https://gamehub-c14b4-default-rtdb.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">632059468478</string>
+    <string name="google_api_key" translatable="false">AIzaSyAIiPjwGOLAVAHSbbvgAJT_lLzyAMhvqTg</string>
+    <string name="google_app_id" translatable="false">1:632059468478:android:8689d3eb782eb3733a1cef</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAIiPjwGOLAVAHSbbvgAJT_lLzyAMhvqTg</string>
+    <string name="google_storage_bucket" translatable="false">gamehub-c14b4.appspot.com</string>
+    <string name="project_id" translatable="false">gamehub-c14b4</string>
+    <style name="BaseUnityTheme" parent="android:Theme.Holo.Light.NoActionBar.Fullscreen">
+</style>
+    <style name="UnityThemeSelector" parent="BaseUnityTheme">
+	<item name="android:windowBackground">@android:color/black</item>
+</style>
+    <style name="UnityThemeSelector.Translucent" parent="@style/UnityThemeSelector">
+    <item name="android:windowIsTranslucent">true</item>
+    <item name="android:windowBackground">@android:color/transparent</item>
+</style>
+</resources>

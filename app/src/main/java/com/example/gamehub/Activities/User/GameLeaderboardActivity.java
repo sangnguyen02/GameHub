@@ -84,7 +84,7 @@ public class GameLeaderboardActivity extends AppCompatActivity implements Naviga
         Bundle args = new Bundle();
         switch (itemId) {
             case R.id.nav_space_ship:
-                args.putString("gameName", "Space Ship");
+                args.putString("gameName", "SpaceShip");
                 break;
             case R.id.nav_2048:
                 args.putString("gameName", "2048");
