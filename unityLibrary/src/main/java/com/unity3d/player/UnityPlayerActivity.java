@@ -395,9 +395,4 @@ public class UnityPlayerActivity extends Activity implements IUnityPlayerLifecyc
             });
         }
     }
-
-
-
-
-
 }
