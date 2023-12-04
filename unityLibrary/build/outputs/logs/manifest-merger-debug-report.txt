@@ -97,16 +97,6 @@ ADDED from C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:1
 		ADDED from C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:15:69-110
 	android:name
 		ADDED from C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:15:15-68
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:16:7-19:23
-category#android.intent.category.LAUNCHER
-ADDED from C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:17:9-69
-	android:name
-		ADDED from C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:17:19-66
-action#android.intent.action.MAIN
-ADDED from C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:18:9-61
-	android:name
-		ADDED from C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:18:17-58
 meta-data#unityplayer.UnityActivity
 ADDED from C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml:20:7-82
 	android:value
