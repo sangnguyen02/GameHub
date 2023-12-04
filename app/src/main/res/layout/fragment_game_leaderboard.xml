@@ -5,13 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.User.Leaderboard.GameLeaderboardFragment">
 
-    <RelativeLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_leaderboard"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rcv_leaderboard"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-    </RelativeLayout>
+        android:layout_height="match_parent"/>
 
 </FrameLayout>

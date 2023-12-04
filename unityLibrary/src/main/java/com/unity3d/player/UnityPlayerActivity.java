@@ -20,11 +20,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.unity3d.player.Models.LeaderboardItem;
 
 import java.util.HashMap;
 import java.util.Map;
-
 
 public class UnityPlayerActivity extends Activity implements IUnityPlayerLifecycleEvents
 {
@@ -176,19 +174,10 @@ public class UnityPlayerActivity extends Activity implements IUnityPlayerLifecyc
     @Override public boolean onTouchEvent(MotionEvent event)          { return mUnityPlayer.onTouchEvent(event); }
     @Override public boolean onGenericMotionEvent(MotionEvent event)  { return mUnityPlayer.onGenericMotionEvent(event); }
 
-    public void sendScoreToAndroidApp(int score) {
+    public void SendHighestScoreToAndroidApp_Ship(int score) {
         // Handle the score received from Unity
-        Log.d("UnityPlayerActivity", "Received score from Unity: " + score);
+        Log.d("UnityPlayerActivity", "Received Star Ship score from Unity: " + score);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-//        if (user != null) {
-//            FirebaseDatabase database = FirebaseDatabase.getInstance();
-//            DatabaseReference userNameRef = database.getReference("Users").child(user.getUid()).child("Fullname");
-//            DatabaseReference scoresRef = database.getReference("Leaderboard").child("SpaceShip").child(user.getUid());
-//
-//            LeaderboardItem leaderboardItem = new LeaderboardItem(user.getUid(), user.getDisplayName(), score);
-//
-//            scoresRef.setValue(leaderboardItem);
-//        }
 
         if (user != null) {
             FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -221,5 +210,194 @@ public class UnityPlayerActivity extends Activity implements IUnityPlayerLifecyc
             });
         }
     }
+
+    public void SendHighestScoreToAndroidApp_2048(int score) {
+        // Handle the score received from Unity
+        Log.d("UnityPlayerActivity", "Received 2048 score from Unity: " + score);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (user != null) {
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+            DatabaseReference userNameRef = database.getReference("Users").child(user.getUid()).child("Fullname");
+
+            userNameRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    String fullname = dataSnapshot.getValue(String.class);
+
+                    if (fullname != null) {
+                        DatabaseReference scoresRef = database.getReference("Leaderboard").child("2048").child(user.getUid());
+                        Map<String, Object> leaderboardData = new HashMap<>();
+                        leaderboardData.put("UserID", user.getUid());
+                        leaderboardData.put("Fullname", fullname);
+                        leaderboardData.put("UserScore", score);
+
+                        scoresRef.setValue(leaderboardData);
+                    } else {
+                        Log.d("UnityPlayerActivity", "Fullname is null");
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    // Xử lý lỗi nếu có
+                    Log.e("UnityPlayerActivity", "Error reading Fullname from Users", databaseError.toException());
+                }
+            });
+        }
+    }
+
+    public void SendHighestScoreToAndroidApp_ColorBird(int score) {
+        // Handle the score received from Unity
+        Log.d("UnityPlayerActivity", "Received ColorBird score from Unity: " + score);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (user != null) {
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+            DatabaseReference userNameRef = database.getReference("Users").child(user.getUid()).child("Fullname");
+
+            userNameRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    String fullname = dataSnapshot.getValue(String.class);
+
+                    if (fullname != null) {
+                        DatabaseReference scoresRef = database.getReference("Leaderboard").child("ColorBird").child(user.getUid());
+                        Map<String, Object> leaderboardData = new HashMap<>();
+                        leaderboardData.put("UserID", user.getUid());
+                        leaderboardData.put("Fullname", fullname);
+                        leaderboardData.put("UserScore", score);
+
+                        scoresRef.setValue(leaderboardData);
+                    } else {
+                        Log.d("UnityPlayerActivity", "Fullname is null");
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    // Xử lý lỗi nếu có
+                    Log.e("UnityPlayerActivity", "Error reading Fullname from Users", databaseError.toException());
+                }
+            });
+        }
+    }
+
+    public void SendHighestScoreToAndroidApp_DotRescue(int score) {
+        // Handle the score received from Unity
+        Log.d("UnityPlayerActivity", "Received Dot rescue score from Unity: " + score);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (user != null) {
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+            DatabaseReference userNameRef = database.getReference("Users").child(user.getUid()).child("Fullname");
+
+            userNameRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    String fullname = dataSnapshot.getValue(String.class);
+
+                    if (fullname != null) {
+                        DatabaseReference scoresRef = database.getReference("Leaderboard").child("DotRescue").child(user.getUid());
+                        Map<String, Object> leaderboardData = new HashMap<>();
+                        leaderboardData.put("UserID", user.getUid());
+                        leaderboardData.put("Fullname", fullname);
+                        leaderboardData.put("UserScore", score);
+
+                        scoresRef.setValue(leaderboardData);
+                    } else {
+                        Log.d("UnityPlayerActivity", "Fullname is null");
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    // Xử lý lỗi nếu có
+                    Log.e("UnityPlayerActivity", "Error reading Fullname from Users", databaseError.toException());
+                }
+            });
+        }
+    }
+
+    public void SendHighestScoreToAndroidApp_Orbits(int score) {
+        // Handle the score received from Unity
+        Log.d("UnityPlayerActivity", "Received Orbit score from Unity: " + score);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (user != null) {
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+            DatabaseReference userNameRef = database.getReference("Users").child(user.getUid()).child("Fullname");
+
+            userNameRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    String fullname = dataSnapshot.getValue(String.class);
+
+                    if (fullname != null) {
+                        DatabaseReference scoresRef = database.getReference("Leaderboard").child("Orbit").child(user.getUid());
+                        Map<String, Object> leaderboardData = new HashMap<>();
+                        leaderboardData.put("UserID", user.getUid());
+                        leaderboardData.put("Fullname", fullname);
+                        leaderboardData.put("UserScore", score);
+
+                        scoresRef.setValue(leaderboardData);
+                    } else {
+                        Log.d("UnityPlayerActivity", "Fullname is null");
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    // Xử lý lỗi nếu có
+                    Log.e("UnityPlayerActivity", "Error reading Fullname from Users", databaseError.toException());
+                }
+            });
+        }
+    }
+
+    public void SendHighestScoreToAndroidApp_Pixel(int score) {
+        // Handle the score received from Unity
+        Log.d("UnityPlayerActivity", "Received Pixel Adventure score from Unity: " + score);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (user != null) {
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+            DatabaseReference userNameRef = database.getReference("Users").child(user.getUid()).child("Fullname");
+
+            userNameRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    String fullname = dataSnapshot.getValue(String.class);
+
+                    if (fullname != null) {
+                        DatabaseReference scoresRef = database.getReference("Leaderboard").child("PixelAdventure").child(user.getUid());
+                        Map<String, Object> leaderboardData = new HashMap<>();
+                        leaderboardData.put("UserID", user.getUid());
+                        leaderboardData.put("Fullname", fullname);
+                        leaderboardData.put("UserScore", score);
+
+                        scoresRef.setValue(leaderboardData);
+                    } else {
+                        Log.d("UnityPlayerActivity", "Fullname is null");
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    // Xử lý lỗi nếu có
+                    Log.e("UnityPlayerActivity", "Error reading Fullname from Users", databaseError.toException());
+                }
+            });
+        }
+    }
+
+
+
+
 
 }

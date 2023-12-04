@@ -89,6 +89,22 @@ public class GameLeaderboardActivity extends AppCompatActivity implements Naviga
             case R.id.nav_2048:
                 args.putString("gameName", "2048");
                 break;
+            case R.id.nav_color_bird:
+                args.putString("gameName", "ColorBird");
+                break;
+
+            case R.id.nav_dot_rescue:
+                args.putString("gameName", "DotRescue");
+                break;
+
+            case R.id.nav_orbit:
+                args.putString("gameName", "Orbit");
+                break;
+
+            case R.id.nav_pixel_adventure:
+                args.putString("gameName", "PixelAdventure");
+                break;
+
         }
         fragment.setArguments(args);
 
