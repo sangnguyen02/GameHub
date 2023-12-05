@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/item_leaderboard_card"
+    android:id="@+id/item_rating_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="10dp"
@@ -17,7 +17,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/userNameTextView"
+            android:id="@+id/userNameTextView_rating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -27,12 +27,12 @@
             android:fontFamily="@font/roboto_condensed_bold"/>
 
         <TextView
-            android:id="@+id/userScoreTextView"
+            android:id="@+id/ratingScoreTextView_rating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginStart="30dp"
-            android:text="100"
+            android:text="Good"
             android:textSize="18sp"
             android:fontFamily="@font/roboto_condensed_regular"/>
     </LinearLayout>

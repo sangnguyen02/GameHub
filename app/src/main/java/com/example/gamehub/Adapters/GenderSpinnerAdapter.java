@@ -28,7 +28,7 @@ public class GenderSpinnerAdapter extends ArrayAdapter<GenderSpinner> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_gender_selected, parent, false);
 
-        ImageView imgCategory = convertView.findViewById(R.id.img_category_selected);
+        ImageView imgCategory = convertView.findViewById(R.id.img_gender_selected);
 
         GenderSpinner genderSpinner = this.getItem(position);
         if (genderSpinner != null) {
@@ -47,8 +47,8 @@ public class GenderSpinnerAdapter extends ArrayAdapter<GenderSpinner> {
     public View getDropDownView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_gender_spinner, parent, false);
 
-        TextView tvCategory = convertView.findViewById(R.id.tv_category);
-        ImageView imgCategory = convertView.findViewById(R.id.img_category);
+        TextView tvCategory = convertView.findViewById(R.id.tv_gender);
+        ImageView imgCategory = convertView.findViewById(R.id.img_gender);
 
         GenderSpinner genderSpinner = this.getItem(position);
         if (genderSpinner != null) {

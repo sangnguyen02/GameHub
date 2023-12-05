@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private static final String PREF_NAME = "UserPrefs";
     private static final String IS_ADMIN = "isAdmin";
-    MaterialButton signUp, signIn, confirm_rs_password;
+    MaterialButton signUp, signIn, confirm_rs_password, cancel_rs_password;
     EditText email_input, password_input, email_rs_password;
     CardView layoutBottomSheet_rs_password;
     BottomSheetBehavior bottomSheetBehavior_rs_password;
@@ -52,6 +52,10 @@ public class LoginActivity extends AppCompatActivity {
 
         initUI();
         initListener();
+        email_input.setText("nsang3163@gmail.com");
+        password_input.setText("123456");
+
+
     }
 
     private void initUI() {
@@ -63,6 +67,7 @@ public class LoginActivity extends AppCompatActivity {
         forgot_password = findViewById(R.id.forgot_password);
         email_rs_password = findViewById(R.id.inputText_email_rs);
         confirm_rs_password = findViewById(R.id.confirm_rs_password_btn);
+        cancel_rs_password = findViewById(R.id.cancel_rs_password_btn);
         progressBar = findViewById(R.id.progressBar_login);
         layoutBottomSheet_rs_password = findViewById(R.id.bottom_sheet_rs_password);
         bottomSheetBehavior_rs_password = BottomSheetBehavior.from(layoutBottomSheet_rs_password);
@@ -81,6 +86,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 onClickConfirmRsPassword();
+            }
+        });
+
+        cancel_rs_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bottomSheetBehavior_rs_password.setState(BottomSheetBehavior.STATE_COLLAPSED);
             }
         });
         signUp.setOnClickListener(new View.OnClickListener() {
@@ -250,26 +262,28 @@ public class LoginActivity extends AppCompatActivity {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         String emailAddress = email_rs_password.getText().toString().trim();
 
-        auth.sendPasswordResetEmail(emailAddress)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()) {
-                            progressBar.setVisibility(View.INVISIBLE);
-                            Snackbar snackbar = Snackbar.make(showSnackBarView, "Email sent.", Snackbar.LENGTH_LONG);
-                            snackbar.show();
-                            bottomSheetBehavior_rs_password.setState(BottomSheetBehavior.STATE_COLLAPSED);
+        if(!emailAddress.isEmpty()) {
+            auth.sendPasswordResetEmail(emailAddress)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                progressBar.setVisibility(View.INVISIBLE);
+                                Snackbar snackbar = Snackbar.make(showSnackBarView, "Email sent.", Snackbar.LENGTH_LONG);
+                                snackbar.show();
+                                bottomSheetBehavior_rs_password.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                            }
+                            else {
+                                progressBar.setVisibility(View.INVISIBLE);
+                                Snackbar snackbar = Snackbar.make(showSnackBarView, "Email sent error.", Snackbar.LENGTH_LONG);
+                                snackbar.show();
+                                bottomSheetBehavior_rs_password.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                            }
                         }
-                        else {
-                            progressBar.setVisibility(View.INVISIBLE);
-                            Snackbar snackbar = Snackbar.make(showSnackBarView, "Email sent error.", Snackbar.LENGTH_LONG);
-                            snackbar.show();
-                            bottomSheetBehavior_rs_password.setState(BottomSheetBehavior.STATE_COLLAPSED);
-                        }
-                    }
-                });
+                    });
+        } else {
+            Snackbar snackbar = Snackbar.make(showSnackBarView, "Please enter the email for sending.", Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }
     }
-
-
-
 }

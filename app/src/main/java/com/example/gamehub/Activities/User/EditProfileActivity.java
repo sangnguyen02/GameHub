@@ -84,7 +84,7 @@ public class EditProfileActivity extends AppCompatActivity {
         saveIcon = findViewById(R.id.save_icon);
         backIcon = findViewById(R.id.back_icon_edit);
         userFullname = findViewById(R.id.edt_fullname);
-        spinnerGender = findViewById(R.id.spn_category);
+        spinnerGender = findViewById(R.id.spn_gender);
         userPhone = findViewById(R.id.edt_phone);
         userEmail = findViewById(R.id.edt_email);
         userLocation = findViewById(R.id.edt_location);
