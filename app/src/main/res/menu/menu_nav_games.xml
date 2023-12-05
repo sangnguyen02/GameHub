@@ -8,6 +8,22 @@
         <item
             android:title="2048"
             android:id="@+id/nav_2048"/>
+
+        <item
+            android:title="Color Bird"
+            android:id="@+id/nav_color_bird"/>
+
+        <item
+            android:title="Dot Rescue"
+            android:id="@+id/nav_dot_rescue"/>
+
+        <item
+            android:title="Orbit"
+            android:id="@+id/nav_orbit"/>
+
+        <item
+            android:title="Pixel adventure"
+            android:id="@+id/nav_pixel_adventure"/>
     </group>
 
 </menu>

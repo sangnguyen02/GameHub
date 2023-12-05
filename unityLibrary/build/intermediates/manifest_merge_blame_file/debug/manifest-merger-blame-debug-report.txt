@@ -6,7 +6,7 @@
 6    <uses-sdk
 7        android:minSdkVersion="22"
 7-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml
-8        android:targetSdkVersion="34" />
+8        android:targetSdkVersion="32" />
 8-->C:\Mobile\GameHub\GameHub\unityLibrary\src\main\AndroidManifest.xml
 9
 10    <uses-feature android:glEsVersion="0x00030000" />

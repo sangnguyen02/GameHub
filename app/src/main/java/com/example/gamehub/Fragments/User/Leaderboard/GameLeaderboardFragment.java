@@ -20,8 +20,15 @@ import com.example.gamehub.ViewHolder.LeaderboardViewHolder;
 import com.example.gamehub.ViewHolder.ManageUsersViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class GameLeaderboardFragment extends Fragment {
 
@@ -47,9 +54,18 @@ public class GameLeaderboardFragment extends Fragment {
     }
 
     private void initUI() {
+//        rcv_leaderboard = rootView.findViewById(R.id.rcv_leaderboard);
+//        rcv_leaderboard.setHasFixedSize(true);
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(rootView.getContext(),RecyclerView.VERTICAL,false);
+//        rcv_leaderboard.setLayoutManager(linearLayoutManager);
+
         rcv_leaderboard = rootView.findViewById(R.id.rcv_leaderboard);
         rcv_leaderboard.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(rootView.getContext(),RecyclerView.VERTICAL,false);
+
+        // Set reverseLayout directly here
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(rootView.getContext(), RecyclerView.VERTICAL, false);
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
         rcv_leaderboard.setLayoutManager(linearLayoutManager);
 
     }
@@ -57,19 +73,13 @@ public class GameLeaderboardFragment extends Fragment {
     private void loadLeaderboard() {
         FirebaseRecyclerOptions<LeaderboardItem> options =
                 new FirebaseRecyclerOptions.Builder<LeaderboardItem>()
-                        .setQuery(LeaderboardRef, LeaderboardItem.class)
+                        .setQuery(LeaderboardRef.limitToLast(10).orderByChild("UserScore"), LeaderboardItem.class)
                         .build();
 
         adapter = new FirebaseRecyclerAdapter<LeaderboardItem, LeaderboardViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull LeaderboardViewHolder holder, int position, @NonNull LeaderboardItem model) {
                 holder.bind(model);
-                if(model.getFullname() != null) {
-                    Log.d("Fullname", model.getFullname());
-                }
-                else {
-                    Log.d("Fullname", "Null");
-                }
             }
 
             @NonNull
@@ -82,6 +92,7 @@ public class GameLeaderboardFragment extends Fragment {
 
         rcv_leaderboard.setAdapter(adapter);
         adapter.startListening();
+
     }
 
 
