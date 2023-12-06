@@ -24,7 +24,7 @@ public class SettingActivityUser extends AppCompatActivity {
 
     CardView layoutBottomSheetChangePassword;
     BottomSheetBehavior bottomSheetBehaviorChangePassword;
-    MaterialButton confirm_btn, open_bts_btn;
+    MaterialButton confirm_btn, cancel_btn, open_bts_btn;
     ImageView back_btn;
     EditText newPassword, confirm_newPassword;
     View showSnackBarView;
@@ -46,6 +46,7 @@ public class SettingActivityUser extends AppCompatActivity {
         layoutBottomSheetChangePassword = findViewById(R.id.bottom_sheet_input_password);
         bottomSheetBehaviorChangePassword = BottomSheetBehavior.from(layoutBottomSheetChangePassword);
         confirm_btn = findViewById(R.id.confirm_change_password_btn);
+        cancel_btn = findViewById(R.id.cancel_change_password_btn);
         back_btn = findViewById(R.id.back_icon_setting);
         open_bts_btn = findViewById(R.id.btn_open_change_password_bts);
         newPassword = findViewById(R.id.inputText_newpassword);
@@ -74,7 +75,12 @@ public class SettingActivityUser extends AppCompatActivity {
             }
         });
 
-
+        cancel_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bottomSheetBehaviorChangePassword.setState(BottomSheetBehavior.STATE_COLLAPSED);
+            }
+        });
     }
 
     private void onClickConfirmChangePassword() {
@@ -83,12 +89,14 @@ public class SettingActivityUser extends AppCompatActivity {
         String confirmPass = confirm_newPassword.getText().toString().trim();
 
         if (newPass.isEmpty() || confirmPass.isEmpty()) {
+            progressBar.setVisibility(View.INVISIBLE);
             Snackbar snackbar = Snackbar.make(showSnackBarView, "Please fill in both fields", Snackbar.LENGTH_LONG);
             snackbar.show();
             return;
         }
 
         if (!newPass.equals(confirmPass)) {
+            progressBar.setVisibility(View.INVISIBLE);
             Snackbar snackbar = Snackbar.make(showSnackBarView, "Passwords do not match", Snackbar.LENGTH_LONG);
             snackbar.show();
             return;

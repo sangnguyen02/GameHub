@@ -68,6 +68,5 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/layout_header_nav"
         app:menu="@menu/menu_nav_games"
-
         />
 </androidx.drawerlayout.widget.DrawerLayout>

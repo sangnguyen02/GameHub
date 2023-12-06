@@ -7,6 +7,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -16,10 +17,13 @@ import android.widget.ImageView;
 
 import com.example.gamehub.Fragments.User.Leaderboard.GameLeaderboardFragment;
 import com.example.gamehub.R;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.navigation.NavigationView;
 
 public class GameLeaderboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     ImageView back_btn, open_drawer_btn;
+
+    MaterialButton open_rating;
     ActionBarDrawerToggle actionBarDrawerToggle;
     DrawerLayout drawerLayout_game_leaderboard;
     NavigationView navigationView;
@@ -30,11 +34,13 @@ public class GameLeaderboardActivity extends AppCompatActivity implements Naviga
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_leaderboard);
 
+        navigationView = findViewById(R.id.navigation_view_games);
+        navigationView.setNavigationItemSelectedListener(this);
+
         initUI();
         initListener();
 
-        navigationView = findViewById(R.id.navigation_view_games);
-        navigationView.setNavigationItemSelectedListener(this);
+
         setupDrawerContent(navigationView);
         if (savedInstanceState == null) {
             selectGame(R.id.nav_space_ship); // Default game
@@ -42,8 +48,10 @@ public class GameLeaderboardActivity extends AppCompatActivity implements Naviga
     }
 
     private void initUI() {
+        View headerView = navigationView.getHeaderView(0);
         back_btn = findViewById(R.id.back_icon_leaderboard);
         open_drawer_btn = findViewById(R.id.open_drawer_icon_leaderboard);
+        open_rating = headerView.findViewById(R.id.open_rating_btn);
         drawerLayout_game_leaderboard = findViewById(R.id.drawer_game_leaderboard);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout_game_leaderboard
                 , R.string.navigation_drawer_open
@@ -53,6 +61,7 @@ public class GameLeaderboardActivity extends AppCompatActivity implements Naviga
     }
 
     private void initListener() {
+
         open_drawer_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,6 +73,14 @@ public class GameLeaderboardActivity extends AppCompatActivity implements Naviga
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+
+        open_rating.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), RatingGameActivity.class);
+                startActivity(intent);
             }
         });
     }

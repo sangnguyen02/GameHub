@@ -120,7 +120,7 @@
                     android:textColor="@color/label"/>
 
                 <Spinner
-                    android:id="@+id/spn_category"
+                    android:id="@+id/spn_gender"
                     android:layout_width="wrap_content"
                     android:layout_height="45dp"
                     android:layout_marginStart="20dp"

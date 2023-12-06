@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.Admin.StatisticFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Spinner
+            android:id="@+id/spn_rating_game_admin"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/background"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/view_rating_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@color/background"
+            android:layout_below="@id/spn_rating_game_admin"
+            android:layout_centerHorizontal="true"
+            android:text="View Rating"
+            android:textSize="20sp"
+            android:fontFamily="@font/roboto_condensed_bold"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/tv_label_total_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view_rating_btn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Total User:"
+            android:textSize="24sp"
+            android:fontFamily="@font/roboto_condensed_bold"/>
+
+        <TextView
+            android:id="@+id/tv_total_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_label_total_user"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="12"
+            android:textSize="24sp"
+            android:fontFamily="@font/roboto_condensed_bold"/>
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pieChart"
+            android:layout_width="match_parent"
+            android:layout_height="340dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/tv_total_user"
+            android:layout_marginTop="20dp" />
+
+    </RelativeLayout>
+
+
+
+</FrameLayout>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activities.User.RatingGameActivity">
+
+    <RelativeLayout
+        android:id="@+id/rating_title_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background">
+        <ImageView
+            android:id="@+id/back_icon_rating"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/back_icon" />
+
+        <TextView
+            android:id="@+id/tv_titleRatingGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:text="Rating"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto_condensed_bold"
+            android:textColor="@color/white"
+            />
+    </RelativeLayout>
+
+
+    <Spinner
+        android:id="@+id/spn_rating_game"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/rating_title_section"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/active"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spn_rating_game">
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_centerHorizontal="true"
+            android:numStars="5"
+            android:progressTint="@color/setting_card"
+            />
+
+        <TextView
+            android:id="@+id/title_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:text="Comment:"
+            android:fontFamily="@font/roboto_condensed_bold"
+            android:textSize="30sp"
+            android:layout_below="@id/ratingBar"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:id="@+id/tv_ratingScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:fontFamily="@font/roboto_condensed_bold"
+            android:textSize="30sp"
+            android:layout_below="@id/title_comment"
+            android:layout_marginTop="40dp"
+            android:layout_centerHorizontal="true"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/confirm_rating_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Confirm"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:fontFamily="@font/roboto_condensed_bold"
+            android:backgroundTint="@color/active"
+            android:layout_below="@id/tv_ratingScore"
+            />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/view_all_rating_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="View All"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:fontFamily="@font/roboto_condensed_bold"
+            android:backgroundTint="@color/active"
+            android:layout_below="@id/confirm_rating_btn"
+            />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

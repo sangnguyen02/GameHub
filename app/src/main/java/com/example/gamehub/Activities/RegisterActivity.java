@@ -70,16 +70,16 @@ public class RegisterActivity extends AppCompatActivity {
 
         if (TextUtils.isEmpty(mEmail))
         {
-            Snackbar snackbar = Snackbar.make(showSnackBarView, "Please enter your email", Snackbar.LENGTH_LONG);
+            Snackbar snackbar = Snackbar.make(showSnackBarView, "Please enter your email.", Snackbar.LENGTH_LONG);
             snackbar.show();
         }
         else if (!isValidEmail(mEmail)) {
-            Snackbar snackbar = Snackbar.make(showSnackBarView, "Please enter a valid email address", Snackbar.LENGTH_LONG);
+            Snackbar snackbar = Snackbar.make(showSnackBarView, "Please enter a valid email address.", Snackbar.LENGTH_LONG);
             snackbar.show();
         }
         else if (TextUtils.isEmpty(mPassword))
         {
-            Snackbar snackbar = Snackbar.make(showSnackBarView, "Please enter your password", Snackbar.LENGTH_LONG);
+            Snackbar snackbar = Snackbar.make(showSnackBarView, "Please enter your password.", Snackbar.LENGTH_LONG);
             snackbar.show();
         }
         else

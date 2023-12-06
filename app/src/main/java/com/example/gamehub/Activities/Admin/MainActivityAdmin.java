@@ -7,13 +7,10 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
-import com.example.gamehub.Fragments.Admin.ManageLeaderboardFragment;
 import com.example.gamehub.Fragments.Admin.ManageUsersFragment;
-import com.example.gamehub.Fragments.User.GameFragment;
-import com.example.gamehub.Fragments.User.ProfileFragment;
+import com.example.gamehub.Fragments.Admin.StatisticFragment;
 import com.example.gamehub.R;
 import com.example.gamehub.databinding.ActivityMainAdminBinding;
-import com.example.gamehub.databinding.ActivityMainUserBinding;
 
 public class MainActivityAdmin extends AppCompatActivity {
 
@@ -33,8 +30,8 @@ public class MainActivityAdmin extends AppCompatActivity {
                     break;
 
 
-                case R.id.manage_leaderboard:
-                    replaceFragment(new ManageLeaderboardFragment());
+                case R.id.statistic:
+                    replaceFragment(new StatisticFragment());
                     break;
             }
             return true;

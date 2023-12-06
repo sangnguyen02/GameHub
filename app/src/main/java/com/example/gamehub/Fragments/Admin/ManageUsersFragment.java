@@ -18,12 +18,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.gamehub.Activities.Admin.UserDetailActivity;
+import com.example.gamehub.Activities.LoginActivity;
 import com.example.gamehub.Models.User;
 import com.example.gamehub.R;
 import com.example.gamehub.ViewHolder.ManageUsersViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.button.MaterialButton;
 import com.google.firebase.FirebaseOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
@@ -32,6 +35,7 @@ public class ManageUsersFragment extends Fragment {
     View rootView;
     DatabaseReference UsersRef;
     RecyclerView rcv_manageUsers;
+    MaterialButton signOut;
 
 
 
@@ -42,14 +46,28 @@ public class ManageUsersFragment extends Fragment {
         rootView = inflater.inflate(R.layout.fragment_manage_users, container, false);
         UsersRef = FirebaseDatabase.getInstance().getReference().child("Users");
         initUI();
+        initListener();
         loadUsers();
         return rootView;
     }
     private void initUI() {
+        signOut = rootView.findViewById(R.id.signOutAdmin);
         rcv_manageUsers = rootView.findViewById(R.id.rcv_manageUsers);
         rcv_manageUsers.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(rootView.getContext(),RecyclerView.VERTICAL,false);
         rcv_manageUsers.setLayoutManager(linearLayoutManager);
+    }
+
+    private void initListener() {
+        signOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(rootView.getContext(), LoginActivity.class);
+                startActivity(intent);
+                getActivity().finishAffinity();
+            }
+        });
     }
 
 

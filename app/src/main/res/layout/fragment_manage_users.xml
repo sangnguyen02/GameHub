@@ -4,11 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragments.Admin.ManageUsersFragment">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcv_manageUsers"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_manageUsers"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/signOutAdmin"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/sign_out_card"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Sign out"/>
+
+    </RelativeLayout>
 </FrameLayout>

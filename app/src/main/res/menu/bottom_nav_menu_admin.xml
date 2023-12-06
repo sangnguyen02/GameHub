@@ -7,8 +7,8 @@
         android:id="@+id/manage_users"/>
 
     <item
-        android:title="Manage Leaderboard"
+        android:title="Statistic"
         android:icon="@drawable/leaderboard_icon"
-        android:id="@+id/manage_leaderboard"/>
+        android:id="@+id/statistic"/>
 
 </menu>
