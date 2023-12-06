@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/background">
 
     <TextView
         android:id="@+id/tv_rating_game"
@@ -11,7 +12,8 @@
         android:layout_marginStart="20dp"
         android:text="Game"
         android:textSize="20sp"
-        android:textStyle="bold"/>
+        android:textColor="@color/white"
+        android:fontFamily="@font/roboto_condensed_bold"/>
 
     <View
         android:layout_width="match_parent"

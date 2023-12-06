@@ -54,6 +54,11 @@ public class LoginActivity extends AppCompatActivity {
         initListener();
         email_input.setText("nsang3163@gmail.com");
         password_input.setText("123456");
+        adminCheckBox.setChecked(false);
+
+//        email_input.setText("admin@admin.com");
+//        password_input.setText("admin1");
+//        adminCheckBox.setChecked(true);
 
 
     }
