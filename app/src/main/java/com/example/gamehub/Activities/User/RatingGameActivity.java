@@ -52,6 +52,7 @@ public class RatingGameActivity extends AppCompatActivity {
     private void initUI() {
         ratingBar = findViewById(R.id.ratingBar);
         ratingScore = findViewById(R.id.tv_ratingScore);
+        ratingScore.setText("Poor");
         back_btn = findViewById(R.id.back_icon_rating);
         confirm_btn = findViewById(R.id.confirm_rating_btn);
         view_all_btn = findViewById(R.id.view_all_rating_btn);
