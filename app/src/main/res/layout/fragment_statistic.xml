@@ -13,8 +13,6 @@
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
             android:background="@color/background"
             />
 
@@ -25,7 +23,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:backgroundTint="@color/background"
+            android:backgroundTint="@color/active"
             android:layout_below="@id/spn_rating_game_admin"
             android:layout_centerHorizontal="true"
             android:text="View Rating"
@@ -64,7 +62,4 @@
             android:layout_marginTop="20dp" />
 
     </RelativeLayout>
-
-
-
 </FrameLayout>

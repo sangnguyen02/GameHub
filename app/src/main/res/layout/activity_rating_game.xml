@@ -38,16 +38,13 @@
             />
     </RelativeLayout>
 
-
     <Spinner
         android:id="@+id/spn_rating_game"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_below="@+id/rating_title_section"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:background="@color/active"
+        android:background="@color/background"
         />
 
     <RelativeLayout

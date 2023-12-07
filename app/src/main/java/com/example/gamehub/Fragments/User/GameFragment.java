@@ -24,7 +24,6 @@ import me.relex.circleindicator.CircleIndicator3;
 
 public class GameFragment extends Fragment {
     View rootView;
-
     MaterialButton openGameHub_btn;
     private ViewPager2 mViewPager2;
     private CircleIndicator3 mCircleIndicator3;
