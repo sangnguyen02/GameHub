@@ -29,7 +29,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/open_game_hub_btn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_marginTop="20dp"
             android:layout_below="@id/circle_indicator_3"
             android:layout_centerHorizontal="true"
@@ -38,6 +38,24 @@
             android:fontFamily="@font/roboto_condensed_bold"
             android:backgroundTint="@color/background"
             />
+
+        <TextView
+            android:id="@+id/title_list_games"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/open_game_hub_btn"
+            android:layout_marginTop="20dp"
+            android:text="List of games"
+            android:textSize="26sp"
+            android:fontFamily="@font/roboto_condensed_bold"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_list_games"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/title_list_games"/>
+
     </RelativeLayout>
 
 </FrameLayout>

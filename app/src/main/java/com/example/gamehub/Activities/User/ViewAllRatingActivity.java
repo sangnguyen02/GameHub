@@ -38,8 +38,12 @@ public class ViewAllRatingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_all_rating);
 
         Intent intent = getIntent();
-        if(intent != null) {
+        if(intent != null && intent.hasExtra("RatingGame")) {
             gameName = intent.getStringExtra("RatingGame");
+            ratingRef = FirebaseDatabase.getInstance().getReference().child("Rating").child(gameName);
+        }
+        else if (intent != null && intent.hasExtra("GameListClickedName")) {
+            gameName = intent.getStringExtra("GameListClickedName");
             ratingRef = FirebaseDatabase.getInstance().getReference().child("Rating").child(gameName);
         }
         initUI();
