@@ -11,6 +11,10 @@ import com.example.gamehub.Fragments.User.GameFragment;
 import com.example.gamehub.Fragments.User.ProfileFragment;
 import com.example.gamehub.R;
 import com.example.gamehub.databinding.ActivityMainUserBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivityUser extends AppCompatActivity {
     ActivityMainUserBinding binding;
@@ -20,6 +24,7 @@ public class MainActivityUser extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainUserBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        setOnlineStatus();
         replaceFragment(new GameFragment());
         initUI();
         initListener();
@@ -51,5 +56,14 @@ public class MainActivityUser extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame_layout, fragment);
         fragmentTransaction.commit();
+    }
+
+    private void setOnlineStatus() {
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference UsersRef = FirebaseDatabase.getInstance().getReference("Users");
+        if(currentUser != null) {
+            String userId = currentUser.getUid();
+            UsersRef.child(userId).child("Status").setValue("1");
+        }
     }
 }

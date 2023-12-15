@@ -13,14 +13,18 @@
             android:layout_height="match_parent"
             />
 
-        <com.google.android.material.button.MaterialButton
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/signOutAdmin"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:backgroundTint="@color/sign_out_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:text="Sign out"/>
+            android:backgroundTint="#E6E13434"
+            android:src="@drawable/back_icon"/>
 
     </RelativeLayout>
+
 </FrameLayout>
