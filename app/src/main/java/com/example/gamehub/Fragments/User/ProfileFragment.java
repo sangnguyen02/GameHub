@@ -88,12 +88,22 @@ public class ProfileFragment extends Fragment {
         signOutCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                setOfflineStatus();
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(rootView.getContext(), LoginActivity.class);
                 startActivity(intent);
                 getActivity().finishAffinity();
             }
         });
+    }
+
+    private void setOfflineStatus() {
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference UsersRef = FirebaseDatabase.getInstance().getReference("Users");
+        if(currentUser != null) {
+            String userId = currentUser.getUid();
+            UsersRef.child(userId).child("Status").setValue("0");
+        }
     }
 
 

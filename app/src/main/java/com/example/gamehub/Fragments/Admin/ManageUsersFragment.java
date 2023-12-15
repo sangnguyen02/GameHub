@@ -25,6 +25,7 @@ import com.example.gamehub.ViewHolder.ManageUsersViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -35,7 +36,7 @@ public class ManageUsersFragment extends Fragment {
     View rootView;
     DatabaseReference UsersRef;
     RecyclerView rcv_manageUsers;
-    MaterialButton signOut;
+    FloatingActionButton signOut;
 
 
 
